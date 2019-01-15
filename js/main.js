@@ -3,18 +3,20 @@ function ajaxme(filename) {
     $.ajax({
         method: 'post',
         url: 'ajax/' + filename,
-        dataType: 'html',
-        success: function (call) {
-            console.log('success');
-            $(dom).html(call);
-        },
-        error: function () {
-            console.log('error');
-        },
-        complete: function () {
-            console.log('complete');
-        }
-    })
+        dataType: 'html'
+        // success: function (call) {
+        //     console.log('success');
+        //     $(dom).html(call);
+        // },
+        // error: function () {
+        //     console.log('error');
+        // },
+        // complete: function () {
+        //     console.log('complete');
+        // }
+    }).done(function(call){
+        $(dom).html(call);
+    });
 }
 
 $(document).ready(function () {
