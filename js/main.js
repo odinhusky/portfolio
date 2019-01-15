@@ -2,7 +2,7 @@ function ajaxme(filename) {
     var dom = $('.p_cont');
     $.ajax({
         method: 'post',
-        url: 'ajax/' + filename,
+        url: 'ajax/' + filename + '/',
         dataType: 'html'
         // success: function (call) {
         //     console.log('success');
