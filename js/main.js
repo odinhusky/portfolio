@@ -17,10 +17,11 @@ function ajaxme(filename) {
     })
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     ajaxme('ajax1.html');
-    $('.obtn').on('click',function(){
+    $('.obtn').on('click', function () {
         var _filename = $(this).attr('data-file');
+        console.log(_filename);
         ajaxme(_filename);
     });
 });
