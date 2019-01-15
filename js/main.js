@@ -2,21 +2,18 @@ function ajaxme(filename) {
     var dom = $('.p_cont');
     $.ajax({
         method: 'post',
-        url: 'ajax/' + filename + '/',
-        dataType: 'html'
-        // success: function (call) {
-        //     console.log('success');
-        //     $(dom).html(call);
-        // },
-        // error: function () {
-        //     console.log('error');
-        // },
-        // complete: function () {
-        //     console.log('complete');
-        // }
-    }).done(function(call){
-        $(dom).html(call);
-    });
+        url: 'ajax/' + filename,
+        dataType: 'html',
+        success: function (call) {
+            console.log('success');
+            $(dom).html(call);
+        },
+        error: function () {
+            console.log('error');
+        },
+        complete: function () {
+            console.log('complete');
+        }
 }
 
 $(document).ready(function () {
