@@ -14,6 +14,7 @@ function ajaxme(filename) {
         complete: function () {
             console.log('complete');
         }
+    });
 }
 
 $(document).ready(function () {
