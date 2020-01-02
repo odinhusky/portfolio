@@ -23,5 +23,9 @@ $(document).ready(function () {
         var _filename = $(this).attr('data-file');
         console.log(_filename);
         ajaxme(_filename);
+
+        // 按鈕顏色轉變
+        $('.obtn').removeClass('active');
+        $(this).addClass('active');
     });
 });
