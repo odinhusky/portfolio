@@ -18,7 +18,10 @@ function ajaxme(filename) {
 }
 
 $(document).ready(function () {
+
+    // 預設第一個
     ajaxme('ajax1.html');
+    
     $('.obtn').on('click', function () {
         var _filename = $(this).attr('data-file');
         console.log(_filename);
