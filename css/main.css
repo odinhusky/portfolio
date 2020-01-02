@@ -49,6 +49,7 @@
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
     outline: none;
+    min-width: 150px;
 }
 .obtn_blue {
     display: block;
