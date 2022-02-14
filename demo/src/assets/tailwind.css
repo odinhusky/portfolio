@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .default-border {
+    @apply border border-solid border-gray-400 rounded;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
