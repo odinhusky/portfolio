@@ -10,4 +10,12 @@
   .flex-center {
     @apply flex justify-center items-center;
   }
+
+  .max-w-1:\/5 {
+    max-width: '20%';
+  }
+
+  .flex-1:\/5 {
+    flex: '1 1 20%';
+  }
 }

@@ -14,6 +14,15 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 library.add(faBars, faBorderAll);
 
 
-createApp(App)
-  .component('fa', FontAwesomeIcon)
-  .mount('#app')
+// # axios
+import Axios from 'axios'
+
+
+const app = createApp(App)
+
+// & Global
+app.config.globalProperties.$axios = Axios
+app.component('fa', FontAwesomeIcon)
+
+// - Render
+app.mount('#app')
