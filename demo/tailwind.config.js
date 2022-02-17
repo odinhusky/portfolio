@@ -18,6 +18,9 @@ module.exports = {
 
       'sm': {'max': '639px'},
       // => @media (max-width: 639px) { ... }
+
+      'mb': {'max': '480px'},
+      // => @media (max-width: 639px) { ... }
     }
   },
   variants: {

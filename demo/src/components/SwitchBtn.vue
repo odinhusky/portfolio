@@ -1,7 +1,7 @@
 <template >
-  <div class="w-10 h-10 default-border flex-center cursor-pointer hover-container" :class="{'active': showType === type}" @click="switchShowType(type)">
+  <button class="w-10 h-10 default-border flex-center hover-container" :class="{'active': showType === type}" @click="switchShowType(type)">
     <fa class="block text-xl hover-icon" :icon="iconName" />
-  </div>
+  </button>
 </template>
 
 <script>
@@ -15,7 +15,6 @@ export default {
   },
   setup() {
     const { showType, switchShowType } = inject('type');
-    console.log('showType', showType)
 
     return {
       showType,

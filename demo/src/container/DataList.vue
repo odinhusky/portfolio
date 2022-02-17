@@ -3,11 +3,12 @@
     <div
       class="data-unit"
       :class="{
-        'flex-1/5': showType === 'cards',
+        'w-1/5 xl:w-1/4 lg:w-1/3 md:w-1/2 mb:w-full mb:px-0': showType === 'cards',
         'w-full flex flex-auto': showType === 'lines',
       }"
       v-for="item in data"
       :key="item.login.uuid"
+      @click="handleProfileClick(item)"
     >
       <div
         class="pserson-img"
@@ -18,10 +19,10 @@
         :style="{backgroundImage: `url(${item.picture.large})`}" ></div>
 
       <div
-        class="w-full"
+        class="break-all"
         :class="{
-          'mt-4': showType === 'cards',
-          'mt-0 p-4': showType === 'lines',
+          'mt-4 w-full': showType === 'cards',
+          'mt-0 p-4 flex-auto description-lines-width': showType === 'lines',
         }"
       >
         <span class="description-line">Name: {{ `${item.name.title}. ${item.name.first} ${item.name.last}` }}</span>
@@ -32,7 +33,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -44,9 +44,14 @@ export default {
     data: Array,
     showType: String
   },
-  setup() {
+  setup(props, { emit }) {
+
+    const handleProfileClick = (profileItem) => {
+      emit('checkProfile', profileItem)
+    }
 
     return {
+      handleProfileClick
     }
   }
 }
@@ -59,7 +64,7 @@ export default {
   }
 
   .data-unit {
-    @apply py-4 px-2 cursor-pointer;
+    @apply py-4 px-2 cursor-pointer select-none;
   }
 
   .pserson-img {
@@ -73,6 +78,10 @@ export default {
 
   .description-line {
     @apply w-full block;
+  }
+
+  .description-lines-width {
+    width: calc(100% - 10rem);
   }
 
 </style>
